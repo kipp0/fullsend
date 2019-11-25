@@ -5,7 +5,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class AccountScreen extends Component {
   static navigationOptions = {
-    title: 'Find Friends',
+    title: 'Account',
   };
 
   render() {
@@ -33,7 +33,7 @@ export default class AccountScreen extends Component {
         </TouchableOpacity>
 
 
-        <TouchableOpacity onPress={() => navigate('AddFriend', { name: 'Joe' })} style={{ marginBottom: 30 }, styles.gotoFindFriends}>
+        <TouchableOpacity onPress={() => navigate('AddFriend', { name: 'Joe' })} style={[styles.gotoFindFriends]}>
           <Text style={styles.gotoFindFriendsText}>
             Add a Friend
         </Text>
@@ -42,8 +42,8 @@ export default class AccountScreen extends Component {
         </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigate('Friends')} style={styles.gotoFindFriends}>
-          <Text style={styles.gotoFindFriendsText}>
+        <TouchableOpacity onPress={() => navigate('Friends')} style={[{ marginTop: 50 }, styles.gotoFindFriends]}>
+          <Text style={[styles.gotoFindFriendsText]}>
             My Friends
         </Text>
         </TouchableOpacity>

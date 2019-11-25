@@ -6,6 +6,7 @@ import FindFriendsScreen from '../screens/FindFriendsScreen';
 import ChatScreen from '../screens/ChatScreen';
 import MessagesScreen from '../screens/MessagesScreen';
 import CallScreen from '../screens/CallScreen';
+import FriendsScreen from '../screens/FriendsScreen';
 // import AddingFriendScreen from '../screens/AddingFriendScreen';
 
 export default createAppContainer(
@@ -17,6 +18,7 @@ export default createAppContainer(
       Chat: { screen: ChatScreen },
       Messages: {screen: MessagesScreen},
       Call: {screen: CallScreen},
+      Friends: { screen: FriendsScreen},
       // AddingFriend: { screen: AddingFriendScreen},
     },
     {

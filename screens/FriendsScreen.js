@@ -1,59 +1,41 @@
-import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-import { StyleSheet, Image, Text, View, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import { Ionicons } from '@expo/vector-icons';
+import { TextInput } from 'react-native-gesture-handler';
+import FakeTitleBar from '../components/FakeTitleBar';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
-export default class MessagesScreen extends React.Component {
-
+export default class FriendsScreen extends React.Component {
+  
   static navigationOptions = {
-    title: 'Messages',
+    title: 'Friends',
   };
-
+  state = {
+    value: '',
+  }
+  onChangeText = text => this.setState({ value })
   render() {
-    const { navigate } = this.props.navigation;
 
     return (
       <View style={styles.container}>
+        <FakeTitleBar name='Friends' navigation={this.props.navigation} />
+
         <ScrollView>
+          <View style={styles.input}>
+            <Ionicons name="ios-search" size={22} color="#ccc" />
+            <TextInput
+            style={styles.textInput}
+            placeHolder='Say Something..'
+            defaultValue={String(this.state.value)}
+            onChangeText={this.onChangeText} />
+          </View>
           <View>
-            <Text style={styles.messagesTitleText}>People</Text>
+            <Text style={styles.messagesTitleText}>Added You</Text>
 
-            <TouchableOpacity
+            <Touchable
               style={styles.option}
               background={Touchable.Ripple('#ccc', false)}
-              onPress={() => navigate('Chat', { name: 'Dale' })}>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={styles.userIconContainer}>
-                  <Image
-                    source={require('../assets/images/user.png')}
-                    style={styles.videoIcon}
-                    size={22}
-                  />
-                </View>
-                <View style={styles.userContainer}>
-                  <Text style={styles.username}>Dale</Text>
-                  <Text style={styles.userChatText}>You there?</Text>
-                </View>
-                <TouchableOpacity 
-                  style={styles.userVideoIconContainer}
-                  onPress={() => navigate('Call')}
-                >
-                  <Image
-                    source={require('../assets/images/video-call-50.png')}
-                    style={styles.videoIcon}
-                    size={22}
-                  />
-                </TouchableOpacity>
-              </View>
-            </TouchableOpacity>
-
-
-            <TouchableOpacity
-              style={styles.option}
-              background={Touchable.Ripple('#ccc', false)}
-              onPress={() => navigate('Chat', { name: 'Jose' })}>
+              onPress={this._handlePressForums}>
               <View style={{ flexDirection: 'row' }}>
                 <View style={styles.userIconContainer}>
                   <Image
@@ -66,10 +48,30 @@ export default class MessagesScreen extends React.Component {
                   <Text style={styles.username}>Jose</Text>
                   <Text style={styles.userChatText}>You there?</Text>
                 </View>
-                <TouchableOpacity 
-                  style={styles.userVideoIconContainer}
-                  onPress={() => navigate('Call')}
-                >
+                <View style={styles.add}>
+                  <Text style={styles.addText}>Add</Text>
+                </View>
+              </View>
+            </Touchable>
+
+            <Text style={styles.messagesTitleText}>Friends</Text>
+            <Touchable
+              style={styles.option}
+              background={Touchable.Ripple('#ccc', false)}
+              onPress={this._handlePressForums}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={styles.userIconContainer}>
+                  <Image
+                    source={require('../assets/images/user.png')}
+                    style={styles.videoIcon}
+                    size={22}
+                  />
+                </View>
+                <View style={styles.userContainer}>
+                  <Text style={styles.username}>Jose</Text>
+                  <Text style={styles.userChatText}>You there?</Text>
+                </View>
+                <TouchableOpacity style={styles.userVideoIconContainer}>
                   <Image
                     source={require('../assets/images/video-call-50.png')}
                     style={styles.videoIcon}
@@ -77,42 +79,13 @@ export default class MessagesScreen extends React.Component {
                   />
                 </TouchableOpacity>
               </View>
-            </TouchableOpacity>
+            </Touchable>
 
-
-            <TouchableOpacity
-              style={styles.option}
-              background={Touchable.Ripple('#ccc', false)}
-              onPress={() => navigate('Chat', { name: 'Armondo' })}>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={styles.userIconContainer}>
-                  <Image
-                    source={require('../assets/images/user.png')}
-                    style={styles.videoIcon}
-                    size={22}
-                  />
-                </View>
-                <View style={styles.userContainer}>
-                  <Text style={styles.username}>Armondo</Text>
-                  <Text style={styles.userChatText}>You there?</Text>
-                </View>
-                <TouchableOpacity 
-                  style={styles.userVideoIconContainer}
-                  onPress={() => navigate('Call')}
-                > 
-                  <Image 
-                    source={ require('../assets/images/video-call-50.png') }
-                    style={styles.videoIcon}
-                  size={22}
-                  />
-                </TouchableOpacity>
-              </View>
-            </TouchableOpacity>
 
             <Touchable
               style={styles.option}
               background={Touchable.Ripple('#ccc', false)}
-              onPress={() => navigate('Chat', { name: 'Jesus' })}>
+              onPress={this._handlePressForums}>
               <View style={{ flexDirection: 'row' }}>
                 <View style={styles.userIconContainer}>
                   <Image
@@ -122,13 +95,36 @@ export default class MessagesScreen extends React.Component {
                   />
                 </View>
                 <View style={styles.userContainer}>
-                  <Text style={styles.username}>Jesus</Text>
+                  <Text style={styles.username}>Jose</Text>
                   <Text style={styles.userChatText}>You there?</Text>
                 </View>
-                <TouchableOpacity 
-                  style={styles.userVideoIconContainer}
-                  onPress={() => navigate('Call')}
-                >
+                <TouchableOpacity style={styles.userVideoIconContainer}>
+                  <Image
+                    source={require('../assets/images/video-call-50.png')}
+                    style={styles.videoIcon}
+                    size={22}
+                  />
+                </TouchableOpacity>
+              </View>
+            </Touchable>
+
+            <Touchable
+              style={styles.option}
+              background={Touchable.Ripple('#ccc', false)}
+              onPress={this._handlePressForums}>
+              <View style={{ flexDirection: 'row' }}>
+                <View style={styles.userIconContainer}>
+                  <Image
+                    source={require('../assets/images/user.png')}
+                    style={styles.videoIcon}
+                    size={22}
+                  />
+                </View>
+                <View style={styles.userContainer}>
+                  <Text style={styles.username}>Jose</Text>
+                  <Text style={styles.userChatText}>You there?</Text>
+                </View>
+                <TouchableOpacity style={styles.userVideoIconContainer}>
                   <Image
                     source={require('../assets/images/video-call-50.png')}
                     style={styles.videoIcon}
@@ -142,28 +138,39 @@ export default class MessagesScreen extends React.Component {
 
           </View>
 
-        </ScrollView> 
+        </ScrollView>
       </View>
-      
+
+
     );
   }
-
-  _handleNavigation = (person) => {
-    
-    
-  };
-
-  _handlePressForums = () => {
-    WebBrowser.openBrowserAsync('http://forums.expo.io');
-  };
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 15,
+    backgroundColor: '#fff'
   },
-  
+  input: {
+    flexDirection: 'row',
+    marginTop: 50,
+    borderWidth: 1,
+    borderColor: '#fff',
+    borderRadius: 50,
+  },
+  userIconContainer: {
+    marginRight: 9,
+  },
+  videoIcon: {
+    width: 22,
+    height: 22,
+  },
+  add: {
+    backgroundColor: '#E7E7E7',
+    padding: 15,
+    borderRadius: 15,
+  },
   messagesTitleText: {
     fontSize: 16,
     marginLeft: 15,
@@ -174,9 +181,7 @@ const styles = StyleSheet.create({
     marginRight: 9,
   },
   userVideoIconContainer: {
-    resizeMode: 'contain',
-    width: 22,
-    height: 22,
+
     marginLeft: 9,
     alignContent: 'flex-end',
   },
@@ -184,10 +189,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 9,
     alignContent: 'flex-end',
-  },
-  videoIcon: {
-    width:22,
-    height: 22,
   },
   option: {
     backgroundColor: '#fdfdfd',

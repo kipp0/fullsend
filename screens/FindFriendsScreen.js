@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import { Ionicons } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
-
+import FakeTitleBar from '../components/FakeTitleBar';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 export default class FindFriendsScreen extends React.Component {
   
   static navigationOptions = {
@@ -17,13 +18,15 @@ export default class FindFriendsScreen extends React.Component {
 
     return (
       <View style={styles.container}>
+        <FakeTitleBar name='Find Friends' navigation={this.props.navigation} />
         <ScrollView>
-          <View>
+          <View style={styles.input}>
             <Ionicons name="ios-search" size={22} color="#ccc" />
-            style={styles.input}
+            <TextInput
+            style={styles.textInput}
             placeHolder='Say Something..'
             defaultValue={String(this.state.value)}
-            onChangeText={this.onChangeText}
+            onChangeText={this.onChangeText} />
           </View>
           <View>
             <Text style={styles.messagesTitleText}>Added You</Text>
@@ -137,6 +140,13 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff'
+  },
+  input: {
+    flexDirection: 'row',
+    marginTop: 50,
+    borderWidth: 1,
+    borderColor: '#fff',
+    borderRadius: 50,
   },
   userIconContainer: {
     marginRight: 9,
