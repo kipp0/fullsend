@@ -1,5 +1,5 @@
-yarn install
-yarn start
+1. yarn install
+2. yarn start
 
-Install Expo app https://apps.apple.com/us/app/expo-client/id982107779
-scan QR code to open app
+3. Install Expo app https://apps.apple.com/us/app/expo-client/id982107779
+4. scan QR code to open app
