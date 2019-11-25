@@ -15,6 +15,7 @@ export default class ChatScreen extends React.Component {
     messages: [
       {
         key: 0,
+        isYou: false,
         text: 'hello',
       }
     ],
@@ -29,7 +30,7 @@ export default class ChatScreen extends React.Component {
   onEnter = value => {
     let key = this.state.messages.length
     value = value.nativeEvent.text
-    this.state.messages.push({ key, value })
+    this.state.messages.push({ key, value, isYou: true })
     messages = this.state.messages
     console.log(messages)
     this.setState({ messages })
@@ -44,10 +45,10 @@ export default class ChatScreen extends React.Component {
 
         {/* <GiftedChat messages={this.state.messages} /> */}
 
-        <ScrollView sytle={styles.scrollView}>
-          <View>
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.msgView}>
             {
-              this.state.messages.map( ( {key, value} ) => <ChatBubble key={key} text={value} /> )
+              this.state.messages.map( ( {key, value, isYou} ) => <ChatBubble key={key} text={value} isYou={isYou} /> )
             }
           </View>
           {/* <Text>{this.state.value}</Text> */}
@@ -75,9 +76,10 @@ const styles = StyleSheet.create({
   },
   
   scrollView: {
-    backgroundColor: '#000',
-    marginTop: 130,
-    paddingTop: 15,
+    marginTop: 50,
+  },
+  bubble: {
+    alignSelf: 'flex-end',
   },
 
   input: { 
