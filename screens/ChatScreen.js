@@ -31,7 +31,7 @@ export default class ChatScreen extends React.Component {
     value = value.nativeEvent.text
     this.state.messages.push({ key, value })
     messages = this.state.messages
-
+    console.log(messages)
     this.setState({ messages })
   }
 
@@ -47,7 +47,7 @@ export default class ChatScreen extends React.Component {
         <ScrollView sytle={styles.scrollView}>
           <View>
             {
-              this.state.messages.map( ( {key, text} ) => <ChatBubble key={key} text={text} /> )
+              this.state.messages.map( ( {key, value} ) => <ChatBubble key={key} text={value} /> )
             }
           </View>
           {/* <Text>{this.state.value}</Text> */}
