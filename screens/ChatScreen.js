@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, TextInput,Text } from "react-native";
+import { View, ScrollView, StyleSheet, TextInput, Text, KeyboardAvoidingView } from "react-native";
 import ChatBubble from "../components/ChatBubble";
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import FakeTitleBar from '../components/FakeTitleBar';
@@ -39,13 +39,13 @@ export default class ChatScreen extends React.Component {
 
     return (
 
-      <View style={styles.container}>
+      <KeyboardAvoidingView behavior='padding' style={styles.container} enabled>
         <FakeTitleBar name={this.props.name} navigation={this.props.navigation} />
 
         {/* <GiftedChat messages={this.state.messages} /> */}
 
-        <ScrollView>
-          <View sytle={styles.chat}>
+        <ScrollView sytle={styles.scrollView}>
+          <View>
             {
               this.state.messages.map( ( {key, text} ) => <ChatBubble key={key} text={text} /> )
             }
@@ -61,7 +61,7 @@ export default class ChatScreen extends React.Component {
           onBlur={this.onEnter}
         />
 
-      </View>
+      </KeyboardAvoidingView>
     )
   }
 }
@@ -70,13 +70,16 @@ const offset = 24;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
-    backgroundColor: '#fff',
+    paddingTop: 15,
+    backgroundColor: '#fff'
   },
   
-  BackButton: {
-    
+  scrollView: {
+    backgroundColor: '#000',
+    marginTop: 130,
+    paddingTop: 15,
   },
+
   input: { 
     height: offset * 2,
     margin: offset,

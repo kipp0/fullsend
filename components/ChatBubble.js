@@ -11,7 +11,7 @@ export default function ChatBubble(props) {
 
 	return (
 		<View
-			style={StyleSheet.bubble}
+			style={styles.bubble}
 		>
 			<Text>{text}</Text>
 
@@ -19,10 +19,13 @@ export default function ChatBubble(props) {
 	);
 }
 
-StyleSheet.create({
+const styles = StyleSheet.create({
 	bubble: {
+		flexWrap: 'wrap',
 		paddingVertical: 20,
 		paddingHorizontal: 25,
 		backgroundColor: '#E8E8E8',
+		borderRadius: 50,
+		maxWidth: '50%',
 	}
 })
