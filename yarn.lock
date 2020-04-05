@@ -1142,8 +1142,8 @@ acorn-walk@^6.0.1:
   resolved acorn-walk-6.2.0.tgz#123cb8f3b84c2171f1f7fb252615b1c78a6b1a8c
 
 acorn@^5.5.3:
-  version "5.7.3"
-  resolved acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.4.tgz#3e8d8a9947d0599a1796d10225d7432f4a4acf5e"
 
 acorn@^6.0.1:
   version "6.3.0"
@@ -4945,9 +4945,10 @@ react-native-maps@~0.25.0:
   version "0.25.0"
   resolved react-native-maps-0.25.0.tgz#81bc51eb50e33811a9e1c345cc48869413ead67d
 
-"react-native-parsed-text@git+https://github.com/EvanBacon/react-native-parsed-text.git":
+"react-native-parsed-text@https://github.com/EvanBacon/react-native-parsed-text.git":
   version "0.0.22"
-  resolved react-native-parsed-text.git-f55c4713c62961f13a2eec99cbc1ec619615ee72#d09037500d22f733972f63e8a26b7bd4c31bb217
+  uid c909f64ee437796fd1b047edd73146fc89edb796
+  resolved "https://github.com/EvanBacon/react-native-parsed-text.git#c909f64ee437796fd1b047edd73146fc89edb796"
   dependencies:
     prop-types "^15.5.10"
 
