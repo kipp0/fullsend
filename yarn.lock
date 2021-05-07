@@ -4945,9 +4945,10 @@ react-native-maps@~0.25.0:
   version "0.25.0"
   resolved react-native-maps-0.25.0.tgz#81bc51eb50e33811a9e1c345cc48869413ead67d
 
-"react-native-parsed-text@git+https://github.com/EvanBacon/react-native-parsed-text.git":
+"react-native-parsed-text@https://github.com/EvanBacon/react-native-parsed-text.git":
   version "0.0.22"
-  resolved react-native-parsed-text.git-f55c4713c62961f13a2eec99cbc1ec619615ee72#d09037500d22f733972f63e8a26b7bd4c31bb217
+  uid c909f64ee437796fd1b047edd73146fc89edb796
+  resolved "https://github.com/EvanBacon/react-native-parsed-text.git#c909f64ee437796fd1b047edd73146fc89edb796"
   dependencies:
     prop-types "^15.5.10"
 
@@ -5921,8 +5922,8 @@ typedarray@^0.0.6:
   resolved typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777
 
 ua-parser-js@^0.7.18, ua-parser-js@^0.7.19:
-  version "0.7.20"
-  resolved ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098
+  version "0.7.28"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
 
 uglify-es@^3.1.9:
   version "3.3.10"
