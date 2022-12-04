@@ -1950,8 +1950,8 @@ decamelize@^1.1.1, decamelize@^1.2.0:
   resolved decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
 
 deep-assign@^3.0.0:
   version "3.0.0"
@@ -4945,9 +4945,10 @@ react-native-maps@~0.25.0:
   version "0.25.0"
   resolved react-native-maps-0.25.0.tgz#81bc51eb50e33811a9e1c345cc48869413ead67d
 
-"react-native-parsed-text@git+https://github.com/EvanBacon/react-native-parsed-text.git":
+"react-native-parsed-text@https://github.com/EvanBacon/react-native-parsed-text.git":
   version "0.0.22"
-  resolved react-native-parsed-text.git-f55c4713c62961f13a2eec99cbc1ec619615ee72#d09037500d22f733972f63e8a26b7bd4c31bb217
+  uid c909f64ee437796fd1b047edd73146fc89edb796
+  resolved "https://github.com/EvanBacon/react-native-parsed-text.git#c909f64ee437796fd1b047edd73146fc89edb796"
   dependencies:
     prop-types "^15.5.10"
 
