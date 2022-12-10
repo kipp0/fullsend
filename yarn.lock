@@ -4837,8 +4837,8 @@ qs@^6.5.0:
   resolved qs-6.9.1.tgz#20082c65cb78223635ab1a9eaca8875a29bf8ec9
 
 qs@~6.5.2:
-  version "6.5.2"
-  resolved qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
 
 query-string@^6.2.0, query-string@^6.4.2:
   version "6.9.0"
@@ -4945,9 +4945,10 @@ react-native-maps@~0.25.0:
   version "0.25.0"
   resolved react-native-maps-0.25.0.tgz#81bc51eb50e33811a9e1c345cc48869413ead67d
 
-"react-native-parsed-text@git+https://github.com/EvanBacon/react-native-parsed-text.git":
+"react-native-parsed-text@https://github.com/EvanBacon/react-native-parsed-text.git":
   version "0.0.22"
-  resolved react-native-parsed-text.git-f55c4713c62961f13a2eec99cbc1ec619615ee72#d09037500d22f733972f63e8a26b7bd4c31bb217
+  uid c909f64ee437796fd1b047edd73146fc89edb796
+  resolved "https://github.com/EvanBacon/react-native-parsed-text.git#c909f64ee437796fd1b047edd73146fc89edb796"
   dependencies:
     prop-types "^15.5.10"
 
